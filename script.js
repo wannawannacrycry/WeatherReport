@@ -1,5 +1,5 @@
 const url = "https://api.openweathermap.org/data/2.5/weather"; // openweathermap base url
-const apiKey = "XXXXXXXXXXXXXXXXXX"; // API Key
+const apiKey = "6938ff6b6f44120cd70a5e7b6b9448e5"; // API Key
 
 async function verifyData(cityName, stateName) // Verify that the provided input has a valid output
 {
@@ -9,7 +9,7 @@ async function verifyData(cityName, stateName) // Verify that the provided input
         const data = await res.json(); // Return promise
         if (res.ok) {
             showWeatherData(data);
-            sendDataToDB()
+            sendDataToDB(data, stateName)
         } 
         else {
             alert(`${cityName} not found in ${stateName}. Please try again.`); // Alert the user if the city can't be found 
