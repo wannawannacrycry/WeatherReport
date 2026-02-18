@@ -9,6 +9,7 @@ async function verifyData(cityName, stateID) // Verify that the provided input h
         const data = await res.json(); // Return promise
         if (res.ok) {
             showWeatherData(data);
+            sendDataToDB()
         } 
         else {
             alert(`${cityName} not found in ${stateID}. Please try again.`); // Alert the user if the city can't be found 
@@ -17,6 +18,11 @@ async function verifyData(cityName, stateID) // Verify that the provided input h
     catch (error) {
 		console.error('Error fetching weather data:', error); // Miscelaneous error catch
 	}
+}
+
+async function sendDataToDB() // Send data to be stored in the DB
+{
+
 }
 
 function showWeatherData(data) // Assign vars for use with HTML
