@@ -1,9 +1,9 @@
-const url = 'https://api.openweathermap.org/data/2.5/weather'; // openweathermap base url
-const apiKey = 'XXXXXXXXXXXXXXXXXX'; // API Key
+const url = "https://api.openweathermap.org/data/2.5/weather"; // openweathermap base url
+const apiKey = "XXXXXXXXXXXXXXXXXX"; // API Key
 
-async function verifyData(cityName, stateID) // Verify that the provided input has a valid output
+async function verifyData(cityName, stateName) // Verify that the provided input has a valid output
 {
-    const inputData = `${url}?q=${cityName},${stateID}&appid=${apiKey}&units=imperial`; //Out together full API request
+    const inputData = `${url}?q=${cityName},${stateName}&appid=${apiKey}&units=imperial`; //Out together full API request
     try {
         const res = await fetch(inputData); // Try to fetch data given the input
         const data = await res.json(); // Return promise
@@ -12,15 +12,15 @@ async function verifyData(cityName, stateID) // Verify that the provided input h
             sendDataToDB()
         } 
         else {
-            alert(`${cityName} not found in ${stateID}. Please try again.`); // Alert the user if the city can't be found 
+            alert(`${cityName} not found in ${stateName}. Please try again.`); // Alert the user if the city can't be found 
         }
 	} 
     catch (error) {
-		console.error('Error fetching weather data:', error); // Miscelaneous error catch
+		console.error("Error fetching weather data:", error); // Miscelaneous error catch
 	}
 }
 
-async function sendDataToDB() // Send data to be stored in the DB
+async function sendDataToDB(weatherData, stateName) // Send data to be stored in the DB
 {
     const dataToSend = {
         city: weatherData.name,
@@ -28,6 +28,26 @@ async function sendDataToDB() // Send data to be stored in the DB
         temperature: weatherData.main.temp,
         description: weatherData.weather[0].description,
         wind_speed: weatherData.wind.speed
+    }
+
+    try {
+            const response = await fetch('logweather.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json',},
+            body: JSON.stringify(dataToSend)
+        });
+        
+        const result = await response.json();
+        if (result.succes){
+            console.log("Data successfully sent to DB")
+        }
+        else
+        {
+            console.error("Error sending data to DB")
+        }
+    } 
+    catch (error) {
+        console.error("Error sending data to DB: ", error)
     }
 }
 
