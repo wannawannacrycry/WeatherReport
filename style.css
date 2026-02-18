@@ -34,7 +34,7 @@ input, select, button {
     gap: 10px;
 }
 
-.output-container { /* Container for the imput elements (city, state, button) */
+.output-container { /* Container for the output elements (city, state, button) */
     display: flex;
     flex-direction: column;
     justify-content: center;
