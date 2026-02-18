@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Weather History</title>
+        <link rel="icon" type="image/x-icon" href="images\favicon.ico">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
