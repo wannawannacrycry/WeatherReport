@@ -31,7 +31,7 @@ async function sendDataToDB(weatherData, stateName) // Send data to be stored in
     }
 
     try {
-            const response = await fetch('logweather.php', {
+            const response = await fetch('senddata.php', {
             method: 'POST',
             headers: {'Content-Type': 'application/json',},
             body: JSON.stringify(dataToSend)
