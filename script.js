@@ -22,7 +22,13 @@ async function verifyData(cityName, stateID) // Verify that the provided input h
 
 async function sendDataToDB() // Send data to be stored in the DB
 {
-
+    const dataToSend = {
+        city: weatherData.name,
+        state: stateName,
+        temperature: weatherData.main.temp,
+        description: weatherData.weather[0].description,
+        wind_speed: weatherData.wind.speed
+    }
 }
 
 function showWeatherData(data) // Assign vars for use with HTML
