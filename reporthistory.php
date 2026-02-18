@@ -13,6 +13,8 @@
                 </div>
             </nav>
         </header>
+        <h1>View Report History</h3>
+
     </body>
 
 
