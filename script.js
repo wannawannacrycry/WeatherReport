@@ -12,7 +12,7 @@ async function verifyData(cityName, stateName) // Verify that the provided input
             sendDataToDB(data, stateName)
         } 
         else {
-            alert(`${cityName} not found in ${stateName}. Please try again.`); // Alert the user if the city can't be found 
+            alert(`${cityName} not found in ${stateName}. Please try again.`); // Alert the user if the city can"t be found 
         }
 	} 
     catch (error) {
@@ -31,9 +31,9 @@ async function sendDataToDB(weatherData, stateName) // Send data to be stored in
     }
 
     try {
-            const response = await fetch('senddata.php', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json',},
+            const response = await fetch("senddata.php", {
+            method: "POST",
+            headers: {"Content-Type": "application/json",},
             body: JSON.stringify(dataToSend)
         });
         
@@ -53,9 +53,9 @@ async function sendDataToDB(weatherData, stateName) // Send data to be stored in
 
 function showWeatherData(data) // Assign vars for use with HTML
 {
-    $('#city-name').text(data.name); // City Name
-    $('#date').text(moment().format('MMMM Do YYYY, h:mm:ss a')); // Date (Month, Day, Year, Time)
-    $('#temperature').html(`${Math.round(data.main.temp)}°F`); // Temperature
-    $('#description').text(data.weather[0].description); // Weather description
-    $('#wind-speed').html(`Wind Speed: ${data.wind.speed} mph`); // Wind speed
+    $("#city-name").text(data.name); // City Name
+    $("#date").text(moment().format("MMMM Do YYYY, h:mm:ss a")); // Date (Month, Day, Year, Time)
+    $("#temperature").html(`${Math.round(data.main.temp)}°F`); // Temperature
+    $("#description").text(data.weather[0].description); // Weather description
+    $("#wind-speed").html(`Wind Speed: ${data.wind.speed} mph`); // Wind speed
 }
