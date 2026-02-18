@@ -80,3 +80,22 @@ input, select, button {
     margin: 20px;
     font-size: 18px;
 }
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: verdana;
+    background-color: white;
+}
+th, td {
+    border: 1px solid #000000;
+    padding: 12px;
+    text-align: left;
+}
+        
+th {
+    background-color: #3b3b3b;
+    color: white;
+}
+

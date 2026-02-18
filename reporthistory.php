@@ -35,10 +35,18 @@
             catch(PDOException $exception){
                 echo "Error connecting and pulling from DB: " . $exception->getMessage();
             }
-
-
-
         ?>
+        <table>
+        <tr>
+            <th>ID</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Temperature (°F)</th>
+            <th>Description</th>
+            <th>Wind Speed (mph)</th>
+            <th>Date Recorded</th>
+        </tr>
+        </table>
     </body>
 
 
