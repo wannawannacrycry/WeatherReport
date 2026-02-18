@@ -29,12 +29,8 @@
                 $stateCount = $stateStatement->fetch(PDO::FETCH_ASSOC)["states"];
                 
                 echo "<div class='search-stats'>";
-                echo "Total Searches: $totalCount | Unique States: $stateCount";
+                    echo "Total Searches: $totalCount | Unique States: $stateCount";
                 echo "</div>";
-            }
-            catch(PDOException $exception){
-                echo "Error connecting and pulling from DB: " . $exception->getMessage();
-            }
         ?>
         <table>
         <tr>
@@ -46,6 +42,26 @@
             <th>Wind Speed (mph)</th>
             <th>Date Recorded</th>
         </tr>
+        <?php
+
+            $statement = $connection->query("SELECT * FROM weather_history ORDER BY date_recorded DESC");
+            
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                    echo "<td>" . $row["id"] . "</td>";
+                    echo "<td>" . $row["city_name"] . "</td>";
+                    echo "<td>" . $row["state_name"] . "</td>";
+                    echo "<td>" . round($row["temperature"]) . "°F</td>";
+                    echo "<td>" . $row["description"] . "</td>";
+                    echo "<td>" . $row["wind_speed"] . " mph</td>";
+                    echo "<td>" . $row["date_recorded"] . "</td>";
+                echo "</tr>";
+            }
+            }
+            catch(PDOException $exception){
+                echo "Error connecting and pulling from DB: " . $exception->getMessage();
+            }
+        ?>
         </table>
     </body>
 
