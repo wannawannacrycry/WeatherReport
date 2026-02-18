@@ -51,10 +51,6 @@ nav a {
 
 /*------------------------------------ Used for index.html ------------------------------------*/
 
-input, select, button {
-    text-align: center;
-}
-
 .input-container { /* Container for the imput elements (city, state, button) */
     display: flex;
     justify-content: center;
@@ -71,7 +67,38 @@ input, select, button {
     gap: 10px;
 }
 
+input, select, button {
+    text-align: center;
+}
 
+select {
+    width: 20%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3b3b3b;
+    color: white;
+}
+
+button {
+  background-color: #3b3b3b;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input {
+    width: 20%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3b3b3b;
+    color: white;
+}
 /*------------------------------------ Used for reporthistory.php ------------------------------------*/
 
 .search-stats {
