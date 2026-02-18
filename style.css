@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(87, 155, 102);
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: verdana;
+    font-size: 60px;
+
+}
+
+h3 {
+    text-align: center;
+    font-size: 40px;
+    font-family: verdana;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+    text-align: center;
+}
+
+input, select, button {
+    text-align: center;
+}
+
+.input-container { /* Container for the imput elements (city, state, button) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    gap: 10px;
+}
+
+.output-container { /* Container for the imput elements (city, state, button) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    gap: 10px;
+}
