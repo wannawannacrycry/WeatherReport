@@ -22,6 +22,15 @@
             try{
                 $connection = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
+                $countStatement = $connection->query("SELECT COUNT(*) as total FROM weather_history");
+                $totalCount = $countStatement->fetch(PDO::FETCH_ASSOC)["total"];
+                
+                $stateStatement = $connection->query("SELECT COUNT(DISTINCT state_name) as states FROM weather_history");
+                $stateCount = $stateStatement->fetch(PDO::FETCH_ASSOC)["states"];
+                
+                echo "<div class='search-stats'>";
+                echo "Total Searches: $totalCount | Unique States: $stateCount";
+                echo "</div>";
             }
             catch(PDOException $exception){
                 echo "Error connecting and pulling from DB: " . $exception->getMessage();

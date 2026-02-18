@@ -1,3 +1,4 @@
+/*------------------------------------ General ------------------------------------*/
 body {
     background-color: rgb(87, 155, 102);
 }
@@ -34,10 +35,6 @@ p {
     text-align: center;
 }
 
-input, select, button {
-    text-align: center;
-}
-
 .navbar {
   display: flex;
   justify-content: space-evenly;
@@ -50,6 +47,12 @@ nav a {
   margin-right: 16px;
   text-decoration: none;
   font-family: verdana;
+}
+
+/*------------------------------------ Used for index.html ------------------------------------*/
+
+input, select, button {
+    text-align: center;
 }
 
 .input-container { /* Container for the imput elements (city, state, button) */
@@ -66,4 +69,14 @@ nav a {
     justify-content: center;
     height: 400px;
     gap: 10px;
+}
+
+
+/*------------------------------------ Used for reportistory.php ------------------------------------*/
+
+.search-stats {
+    text-align: center;
+    font-family: verdana;
+    margin: 20px;
+    font-size: 18px;
 }
