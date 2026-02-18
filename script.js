@@ -38,7 +38,7 @@ async function sendDataToDB(weatherData, stateName) // Send data to be stored in
         });
         
         const result = await response.json();
-        if (result.succes){
+        if (result.success){
             console.log("Data successfully sent to DB")
         }
         else
