@@ -21,12 +21,12 @@
             $username = "root";
             $password = "root";
             try{
-                $connection = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                $connection = new PDO("mysql:host=$host;dbname=$dbname", $username, $password); // connect to DB
 
-                $countStatement = $connection->query("SELECT COUNT(*) as total FROM weather_history");
+                $countStatement = $connection->query("SELECT COUNT(*) as total FROM weather_history"); // Get count of entries
                 $totalCount = $countStatement->fetch(PDO::FETCH_ASSOC)["total"];
                 
-                $stateStatement = $connection->query("SELECT COUNT(DISTINCT state_name) as states FROM weather_history");
+                $stateStatement = $connection->query("SELECT COUNT(DISTINCT state_name) as states FROM weather_history"); // Get count of unique states
                 $stateCount = $stateStatement->fetch(PDO::FETCH_ASSOC)["states"];
                 
                 echo "<div class='search-stats'>";
@@ -45,7 +45,7 @@
         </tr>
         <?php
 
-            $statement = $connection->query("SELECT * FROM weather_history ORDER BY date_recorded DESC");
+            $statement = $connection->query("SELECT * FROM weather_history ORDER BY date_recorded DESC"); // Retrieve all data and sort by latest
             
             while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";

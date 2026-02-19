@@ -7,7 +7,7 @@ async function verifyData(cityName, stateName) // Verify that the provided input
     try {
         const res = await fetch(inputData); // Try to fetch data given the input
         const data = await res.json(); // Return promise
-        if (res.ok) {
+        if (res.ok) { // If no issues with the data, attempt to send to PHP and HTML
             showWeatherData(data);
             sendDataToDB(data, stateName)
         } 
@@ -22,7 +22,7 @@ async function verifyData(cityName, stateName) // Verify that the provided input
 
 async function sendDataToDB(weatherData, stateName) // Send data to be stored in the DB
 {
-    const dataToSend = {
+    const dataToSend = { // Prepare data to send to PHP
         city: weatherData.name,
         state: stateName,
         temperature: weatherData.main.temp,
