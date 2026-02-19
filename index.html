@@ -21,7 +21,7 @@
 		</nav>
 	</header>
 	<h1>Generate a Weather Report</h3>
-	<div class="input-container">
+	<div class="input-container"> <!--Container for input data-->
 		<input type="text" id="city-input" placeholder="Enter city name">
 		<select name="state" id="state-input">
 			<option value="" selected="selected">Select a State</option>
@@ -77,12 +77,12 @@
 			<option value="Wisconsin">Wisconsin</option>
 			<option value="Wyoming">Wyoming</option>
 		</select>
-		<button id="input-button" onclick="verifyData($('#city-input').val(),$('#state-input').val())"> 
+		<button id="input-button" onclick="verifyData($('#city-input').val(),$('#state-input').val())"> <!--Call js function to retrieve weather data-->
 			Get Weather 
 		</button>
 	</div>
 
-	<div class="output-container">
+	<div class="output-container"> <!--Container for output data-->
 		<h3 id="city-name"></h3>
 		<p id="date"></p> 		  
 		<p id="temperature"></p>  
