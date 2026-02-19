@@ -3,7 +3,7 @@ const apiKey = "6938ff6b6f44120cd70a5e7b6b9448e5"; // API Key
 
 async function verifyData(cityName, stateName) // Verify that the provided input has a valid output
 {
-    const inputData = `${url}?q=${cityName},${stateName}&appid=${apiKey}&units=imperial`; //Put together full API request
+    const inputData = `${url}?q=${cityName},${stateName},US&appid=${apiKey}&units=imperial`; //Put together full API request
     try {
         const res = await fetch(inputData); // Try to fetch data given the input
         const data = await res.json(); // Return promise
