@@ -1,5 +1,5 @@
 const url = "https://api.openweathermap.org/data/2.5/weather"; // openweathermap base url
-const apiKey = "6938ff6b6f44120cd70a5e7b6b9448e5"; // API Key
+const apiKey = "6938ff6b6f44120cd70a5e7b6b9448e5"; // API Key (NOTE: This specific key is invalid, use your own.)
 
 async function verifyData(cityName, stateName) // Verify that the provided input has a valid output
 {
